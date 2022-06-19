@@ -13,6 +13,20 @@ def _t1_impl(ctx):
         ),
     ]
     return cc_common.create_cc_toolchain_config_info(
+        # note: I tried to configure the action specifically and it did not change the behavior.
+        # action_configs = [
+        #     action_config(
+        #         action_name = ACTION_NAMES.C_COMPILE_ACTION_NAME,
+        #         tools = [
+        #             tool(
+        #                 path = base+"gcc-12",
+        #                 with_features = [],
+        #             ),
+        #         ],
+        #         enabled = True,
+        #     ),
+        # ],    
+
         ctx = ctx,
         toolchain_identifier = "t1",        
         host_system_name = "ignored",
